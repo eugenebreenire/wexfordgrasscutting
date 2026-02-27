@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Grass Cutting in County Wexford & South Wicklow | Wexford Grass Cutting</title>
+  <meta name="description" content="Local grass cutting (lawn mowing) across South Wicklow and County Wexford. Friendly, reliable, tidy finish. Call/text for a quick quote." />
+
+  <style>
+    :root{
+      --bg1:#071018;
+      --bg2:#0b1621;
+      --card:rgba(17,27,39,.72);
+      --border:rgba(255,255,255,.10);
+      --text:#eef4ff;
+      --muted:rgba(238,244,255,.72);
+
+      /* warmer, “local” accents */
+      --green:#55d98f;
+      --green2:#2fbf71;
+      --amber:#ffd38a;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(85,217,143,.22), transparent 55%),
+        radial-gradient(700px 420px at 85% 18%, rgba(255,211,138,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+    }
+
+    a{color:inherit}
+    .wrap{max-width:1050px;margin:0 auto;padding:26px 18px 70px}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      padding:10px 0 6px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px
+    }
+    .logoMark{
+      width:34px;height:34px;border-radius:12px;
+      background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.18), transparent 45%),
+                  linear-gradient(135deg, var(--green), var(--green2));
+      box-shadow: 0 14px 30px rgba(85,217,143,.18);
+      position:relative;
+    }
+    .logoMark:after{
+      content:"";
+      position:absolute;inset:9px 10px 11px 10px;
+      border-radius:8px;
+      border:1px solid rgba(0,0,0,.18);
+      background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.18));
+      opacity:.35;
+    }
+
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:12px 14px;border-radius:14px;text-decoration:none;font-weight:750;
+      border:1px solid transparent;
+      transition: transform .08s ease, background .15s ease, border-color .15s ease;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn.primary{
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      color:#062014;
+      box-shadow: 0 18px 40px rgba(85,217,143,.18);
+    }
+    .btn.ghost{
+      background: rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.12);
+      color:var(--text);
+    }
+
+    .hero{margin-top:18px;display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding:18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    h1{
+      font-size:clamp(28px,3.4vw,46px);
+      line-height:1.05;margin:0 0 10px;
+      letter-spacing:-.4px;
+    }
+    h2{margin:0 0 10px}
+    p{margin:0 0 12px;line-height:1.55;color:var(--muted)}
+    strong{color:rgba(238,244,255,.95)}
+
+    .trustRow{
+      display:flex;flex-wrap:wrap;gap:10px;margin-top:12px
+    }
+    .trustPill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:9px 11px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.12);
+      color:rgba(238,244,255,.78);
+      font-size:14px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: linear-gradient(180deg, var(--green), var(--green2));
+      box-shadow: 0 0 0 4px rgba(85,217,143,.14);
+    }
+
+    .miniGrid{margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .mini{
+      padding:14px;border-radius:16px;border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.10);
+    }
+    .k{font-weight:800;margin:0 0 6px}
+    .small{font-size:14px;color:rgba(238,244,255,.72);margin:0}
+
+    .aboutBox{
+      margin-top:12px;
+      display:flex;gap:12px;align-items:flex-start;
+      padding:14px;border-radius:16px;border:1px solid rgba(255,255,255,.10);
+      background: radial-gradient(600px 180px at 10% 0%, rgba(255,211,138,.10), transparent 60%),
+                  rgba(0,0,0,.10);
+    }
+    .avatar{
+      width:46px;height:46px;border-radius:16px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12);
+      display:grid;place-items:center;
+      flex:0 0 auto;
+    }
+    .avatar svg{opacity:.9}
+
+    .section{
+      margin-top:18px;
+      display:grid;grid-template-columns:1fr 1fr;gap:12px
+    }
+    .quote{
+      padding:14px;border-radius:16px;border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.10);
+    }
+    .quote p{margin:0;color:rgba(238,244,255,.78)}
+    .quote .who{margin-top:10px;font-weight:750;color:rgba(238,244,255,.86);font-size:14px}
+
+    form{display:grid;gap:10px;margin-top:10px}
+    input, textarea{
+      width:100%;padding:12px 12px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(9,17,28,.55);
+      color:var(--text);
+      outline:none;
+    }
+    input:focus, textarea:focus{
+      border-color: rgba(85,217,143,.55);
+      box-shadow: 0 0 0 4px rgba(85,217,143,.10);
+    }
+    textarea{min-height:120px;resize:vertical}
+
+    .subCtaRow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+    .footer{margin-top:14px;color:rgba(238,244,255,.65);font-size:13px;line-height:1.4}
+
+    /* subtle grass wave */
+    .grassWave{
+      margin-top:14px;height:46px;border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(20px 14px at 10% 70%, rgba(85,217,143,.26), transparent 70%),
+        radial-gradient(22px 16px at 18% 62%, rgba(85,217,143,.22), transparent 70%),
+        radial-gradient(18px 12px at 28% 75%, rgba(85,217,143,.22), transparent 70%),
+        radial-gradient(26px 18px at 38% 64%, rgba(85,217,143,.22), transparent 70%),
+        radial-gradient(18px 12px at 52% 76%, rgba(85,217,143,.22), transparent 70%),
+        radial-gradient(22px 16px at 62% 64%, rgba(85,217,143,.20), transparent 70%),
+        radial-gradient(18px 12px at 74% 74%, rgba(85,217,143,.20), transparent 70%),
+        radial-gradient(26px 18px at 84% 62%, rgba(85,217,143,.18), transparent 70%),
+        rgba(0,0,0,.10);
+      opacity:.9;
+    }
+
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr}
+      .miniGrid{grid-template-columns:1fr}
+      .section{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logoMark" aria-hidden="true"></div>
+        <div>Wexford Grass Cutting</div>
+      </div>
+      <div class="cta">
+        <a class="btn ghost" href="tel:[PHONE]">📞 Call/Text: [PHONE DISPLAY]</a>
+        <a class="btn primary" href="#contact">Get a Quick Quote</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <!-- LEFT -->
+      <div class="card">
+        <h1>Grass Cutting <br> Wexford &amp; South Wicklow</h1>
+        <p>
+          Friendly, reliable <strong>grass cutting (lawn mowing)</strong> — done properly and left tidy.
+          One-off cuts or regular maintenance.
+        </p>
+
+        <div class="trustRow">
+          <div class="trustPill"><span class="dot"></span> Local & dependable</div>
+          <div class="trustPill"><span class="dot"></span> Quick replies</div>
+          <div class="trustPill"><span class="dot"></span> Tidy finish</div>
+          <div class="trustPill"><span class="dot"></span> One-off or regular</div>
+        </div>
+
+        <div class="miniGrid">
+          <div class="mini">
+            <div class="k">What we do</div>
+            <p class="small">Grass cutting / lawn mowing only.</p>
+          </div>
+          <div class="mini">
+            <div class="k">Who it’s for</div>
+            <p class="small">Homes, rentals, holiday homes, small sites.</p>
+          </div>
+          <div class="mini">
+            <div class="k">How quotes work</div>
+            <p class="small">Send your town + lawn size. We’ll reply quickly.</p>
+          </div>
+        </div>
+
+        <div class="aboutBox">
+          <div class="avatar" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" stroke="white" stroke-width="1.6" opacity=".9"/>
+              <path d="M20 21a8 8 0 1 0-16 0" stroke="white" stroke-width="1.6" opacity=".9"/>
+            </svg>
+          </div>
+          <div>
+            <div class="k">A trusted local service</div>
+            <p class="small" style="margin:0">
+              Hi — I’m <strong>[Name]</strong>. I’m based locally and I keep it simple: show up, cut the grass,
+              leave it tidy. If you’re nearby, just ask.
+            </p>
+          </div>
+        </div>
+
+        <div class="mini" style="margin-top:12px">
+          <div class="k">Areas served (examples)</div>
+          <p class="small" style="margin:0">
+            South Wicklow: [Town 1], [Town 2], [Town 3] • Wexford: [Town 4], [Town 5], [Town 6]
+          </p>
+        </div>
+
+        <div class="grassWave" aria-hidden="true"></div>
+
+        <div class="section">
+          <div class="quote">
+            <p>“Turned up when he said he would, did a lovely tidy job. Will use again.”</p>
+            <div class="who">— [Customer], [Town]</div>
+          </div>
+          <div class="quote">
+            <p>“Quick response, fair price, and the place looked great after.”</p>
+            <div class="who">— [Customer], [Town]</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: CONTACT -->
+      <div class="card" id="contact">
+        <h2>Contact / Quick Quote</h2>
+        <p class="small">
+          Call/text, or send a message below. Include your <strong>town</strong> and an estimate of <strong>lawn size</strong>.
+        </p>
+
+        <div class="subCtaRow">
+          <a class="btn ghost" href="tel:[PHONE]">📞 Call</a>
+          <a class="btn ghost" href="sms:[PHONE]">💬 Text</a>
+        </div>
+
+        <!-- ✅ GitHub Pages-friendly: Formspree -->
+        <form id="quoteForm" action="https://formspree.io/f/xkovejzn" method="POST">
+          <input name="name" placeholder="Your name" required />
+          <input name="phone" placeholder="Phone number" required />
+          <input name="town" placeholder="Town / area" required />
+          <textarea name="message" placeholder="Lawn size + one-off or regular? Any access notes?" required></textarea>
+
+          <!-- optional: customer email so you can reply easily -->
+          <input type="email" name="email" placeholder="Your email (optional)" />
+
+          <!-- anti-spam honeypot -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <button class="btn primary" type="submit">Send Quote Request</button>
+
+          <p id="formStatus" class="small" style="display:none; margin-top:10px;"></p>
+        </form>
+
+        <div class="footer">
+          <div><strong>Phone:</strong> <a href="tel:[PHONE]">[PHONE DISPLAY]</a></div>
+          <div><strong>Email:</strong>
+            <a href="mailto:eugene.breen.58@gmail.com?subject=Grass%20Cutting%20Quote&body=Town:%0ALawn%20size:%0AOne-off%20or%20regular:%0APhone:%0A">
+              eugene.breen.58@gmail.com
+            </a>
+          </div>
+          <div style="margin-top:10px;opacity:.9">© <span id="y"></span> Wexford Grass Cutting</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    (function () {
+      const form = document.getElementById("quoteForm");
+      const statusEl = document.getElementById("formStatus");
+      if (!form || !statusEl) return;
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        statusEl.style.display = "block";
+        statusEl.textContent = "Sending…";
+
+        try {
+          const formData = new FormData(form);
+
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+          });
+
+          if (res.ok) {
+            // Redirect to your own thanks page (free)
+            window.location.href = "/thanks.html";
+          } else {
+            statusEl.textContent = "Sorry — something went wrong. Please try again or use Email/Call above.";
+          }
+        } catch (err) {
+          statusEl.textContent = "Network error — please try again or use Email/Call above.";
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

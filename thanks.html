@@ -1,0 +1,118 @@
+<!-- thanks.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thanks — Message Sent | Wexford Grass Cutting</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    :root{
+      --bg1:#071018;
+      --bg2:#0b1621;
+      --card:rgba(17,27,39,.72);
+      --border:rgba(255,255,255,.10);
+      --text:#eef4ff;
+      --muted:rgba(238,244,255,.72);
+      --green:#55d98f;
+      --green2:#2fbf71;
+      --amber:#ffd38a;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 20% 10%, rgba(85,217,143,.22), transparent 55%),
+        radial-gradient(700px 420px at 85% 18%, rgba(255,211,138,.14), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding:26px 18px;
+    }
+    .card{
+      width:min(820px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:22px;
+      backdrop-filter: blur(10px);
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px;
+      margin-bottom:14px;
+    }
+    .logoMark{
+      width:34px;height:34px;border-radius:12px;
+      background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.18), transparent 45%),
+                  linear-gradient(135deg, var(--green), var(--green2));
+      box-shadow: 0 14px 30px rgba(85,217,143,.18);
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:clamp(26px,3.2vw,40px);
+      letter-spacing:-.4px;
+      line-height:1.1;
+    }
+    p{margin:0 0 12px;line-height:1.55;color:var(--muted)}
+    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:12px 14px;border-radius:14px;text-decoration:none;font-weight:750;
+      border:1px solid transparent;
+      transition: transform .08s ease, background .15s ease, border-color .15s ease;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn.primary{
+      background: linear-gradient(135deg, var(--green), var(--green2));
+      color:#062014;
+      box-shadow: 0 18px 40px rgba(85,217,143,.18);
+    }
+    .btn.ghost{
+      background: rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.12);
+      color:var(--text);
+    }
+    .note{
+      margin-top:14px;
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.10);
+      color:rgba(238,244,255,.76);
+      font-size:14px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card">
+    <div class="brand">
+      <div class="logoMark" aria-hidden="true"></div>
+      <div>Wexford Grass Cutting</div>
+    </div>
+
+    <h1>Thanks — message received ✅</h1>
+    <p>
+      We’ve got your request and we’ll get back to you as soon as possible.
+      If it’s urgent, it’s always quickest to call or text.
+    </p>
+
+    <div class="row">
+      <a class="btn primary" href="/">Back to the site</a>
+      <a class="btn ghost" href="tel:[PHONE]">📞 Call/Text: [PHONE DISPLAY]</a>
+      <a class="btn ghost" href="mailto:eugene.breen.58@gmail.com?subject=Grass%20Cutting%20Quote">✉️ Email</a>
+    </div>
+
+    <div class="note">
+      Tip: include your <strong>town</strong> and an estimate of <strong>lawn size</strong> to speed up the quote.
+    </div>
+  </main>
+</body>
+</html>
