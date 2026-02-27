@@ -7,6 +7,7 @@
   <meta name="description" content="Local grass cutting (lawn mowing) across South Wicklow and County Wexford. Friendly, reliable, tidy finish. Call/text for a quick quote." />
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="icon" type="image/png" href="favicon.png">
+
   <style>
     :root{
       --bg1:#071018;
@@ -68,6 +69,7 @@
       border:1px solid transparent;
       transition: transform .08s ease, background .15s ease, border-color .15s ease;
       user-select:none;
+      cursor:pointer;
     }
     .btn:hover{transform: translateY(-1px)}
     .btn.primary{
@@ -186,10 +188,97 @@
       opacity:.9;
     }
 
+    /* --- Work Gallery --- */
+    .galleryGrid{
+      margin-top:12px;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+    .gCard{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.10);
+      border-radius:16px;
+      overflow:hidden;
+      cursor:pointer;
+      transition: transform .08s ease, border-color .15s ease;
+    }
+    .gCard:hover{
+      transform: translateY(-1px);
+      border-color: rgba(85,217,143,.35);
+    }
+    .gImg{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      display:block;
+    }
+    .gMeta{padding:10px 12px}
+    .gTitle{
+      margin:0;
+      font-weight:800;
+      font-size:14px;
+      color:rgba(238,244,255,.92);
+    }
+    .gSub{
+      margin:4px 0 0;
+      font-size:13px;
+      color:rgba(238,244,255,.68);
+    }
+
+    /* Lightbox */
+    .lightbox{
+      position:fixed;
+      inset:0;
+      background: rgba(0,0,0,.72);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:9999;
+    }
+    .lightbox.open{display:flex}
+    .lightboxInner{
+      width:min(980px, 100%);
+      background: rgba(17,27,39,.92);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow: 0 20px 70px rgba(0,0,0,.55);
+    }
+    .lightboxImg{
+      width:100%;
+      max-height:72vh;
+      object-fit:contain;
+      background: rgba(0,0,0,.35);
+      display:block;
+    }
+    .lightboxBar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:10px 12px;
+      color:rgba(238,244,255,.78);
+      font-size:14px;
+    }
+    .xBtn{
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color:rgba(238,244,255,.9);
+      border-radius:12px;
+      padding:8px 10px;
+      cursor:pointer;
+      font-weight:800;
+    }
+    .xBtn:hover{border-color: rgba(85,217,143,.35)}
+
     @media (max-width: 920px){
       .hero{grid-template-columns:1fr}
       .miniGrid{grid-template-columns:1fr}
       .section{grid-template-columns:1fr}
+      .galleryGrid{grid-template-columns:1fr}
+      .gImg{height:200px}
     }
   </style>
 </head>
@@ -261,6 +350,46 @@
           </p>
         </div>
 
+        <!-- ✅ NEW: Recent work gallery (add your images into /images folder) -->
+        <div class="mini" style="margin-top:12px">
+          <div class="k">Recent work</div>
+          <p class="small" style="margin:0">A few examples (click to enlarge).</p>
+
+          <div class="galleryGrid" aria-label="Arklow lawn work gallery">
+            <div class="gCard" data-full="images/Garden-1.jpeg" data-caption="Before / After — Arklow">
+              <img class="gImg" src="images/Garden-1.jpeg" alt="Grass cutting before and after in Arklow">
+              <div class="gMeta">
+                <p class="gTitle">Summers Day Clean Up</p>
+                <p class="gSub">Arklow</p>
+              </div>
+            </div>
+
+            <div class="gCard" data-full="images/work-2.jpg" data-caption="Regular cut — Ferns">
+              <img class="gImg" src="images/work-2.jpg" alt="Regular grass cutting in Ferns">
+              <div class="gMeta">
+                <p class="gTitle">Regular cut</p>
+                <p class="gSub">Ferns</p>
+              </div>
+            </div>
+
+            <div class="gCard" data-full="images/work-3.jpg" data-caption="One-off tidy up — Gorey">
+              <img class="gImg" src="images/work-3.jpg" alt="One-off grass cutting tidy up in Gorey">
+              <div class="gMeta">
+                <p class="gTitle">One-off tidy up</p>
+                <p class="gSub">Gorey</p>
+              </div>
+            </div>
+
+            <div class="gCard" data-full="images/work-4.jpg" data-caption="Holiday home cut — Wicklow">
+              <img class="gImg" src="images/work-4.jpg" alt="Holiday home grass cutting in Wicklow">
+              <div class="gMeta">
+                <p class="gTitle">Holiday home cut</p>
+                <p class="gSub">Wicklow</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="grassWave" aria-hidden="true"></div>
 
         <div class="section">
@@ -294,14 +423,10 @@
           <input name="town" placeholder="Town / area" required />
           <textarea name="message" placeholder="Lawn size + one-off or regular? Any access notes?" required></textarea>
 
-          <!-- optional: customer email so you can reply easily -->
           <input type="email" name="email" placeholder="Your email (optional)" />
-
-          <!-- anti-spam honeypot -->
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
           <button class="btn primary" type="submit">Send Quote Request</button>
-
           <p id="formStatus" class="small" style="display:none; margin-top:10px;"></p>
         </form>
 
@@ -318,9 +443,56 @@
     </section>
   </div>
 
+  <!-- ✅ NEW: Lightbox modal -->
+  <div class="lightbox" id="lb" aria-hidden="true">
+    <div class="lightboxInner" role="dialog" aria-modal="true" aria-label="Image preview">
+      <img class="lightboxImg" id="lbImg" alt="">
+      <div class="lightboxBar">
+        <div id="lbCap"></div>
+        <button class="xBtn" id="lbClose" type="button">Close ✕</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
+    // Lightbox for gallery
+    (function(){
+      const lb = document.getElementById("lb");
+      const img = document.getElementById("lbImg");
+      const cap = document.getElementById("lbCap");
+      const closeBtn = document.getElementById("lbClose");
+      if(!lb || !img || !cap || !closeBtn) return;
+
+      const open = (src, caption, alt) => {
+        img.src = src;
+        img.alt = alt || caption || "Work photo";
+        cap.textContent = caption || "";
+        lb.classList.add("open");
+        lb.setAttribute("aria-hidden","false");
+        document.body.style.overflow = "hidden";
+      };
+
+      const close = () => {
+        lb.classList.remove("open");
+        lb.setAttribute("aria-hidden","true");
+        img.src = "";
+        document.body.style.overflow = "";
+      };
+
+      document.querySelectorAll(".gCard").forEach(card => {
+        card.addEventListener("click", () => {
+          open(card.dataset.full, card.dataset.caption, card.querySelector("img")?.alt);
+        });
+      });
+
+      closeBtn.addEventListener("click", close);
+      lb.addEventListener("click", (e) => { if(e.target === lb) close(); });
+      document.addEventListener("keydown", (e) => { if(e.key === "Escape") close(); });
+    })();
+
+    // Formspree submit (free) + redirect to your own thanks page
     (function () {
       const form = document.getElementById("quoteForm");
       const statusEl = document.getElementById("formStatus");
@@ -342,7 +514,6 @@
           });
 
           if (res.ok) {
-            // Redirect to your own thanks page (free)
             window.location.href = "thanks.html";
           } else {
             statusEl.textContent = "Sorry — something went wrong. Please try again or use Email/Call above.";
